@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SATGAS</title>
+  <meta name="description" content="SATGAS adalah framework open source untuk agent-to-agent task generation & automation service: task graph (DAG), guardrails, dan observability." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/satgas-logo.png" sizes="32x32" />
+  <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/satgas-logo.png" alt="SATGAS logo" onerror="this.style.display='none'; this.parentElement.classList.add('brand__mark--fallback');" />
+          <span class="brand__fallback"></span>
+        </span>
+        <span class="brand__name">SATGAS</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#product">Product</a>
+        <a href="#solutions">Process</a>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="#community">Community</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav__github" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="docs.html">Read Docs</a>
+        <a class="btn btn--primary" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">Star on GitHub</a>
+        <button class="iconbtn" id="navToggle" aria-label="Open menu" aria-controls="navDrawer" aria-expanded="false">
+          <span class="iconbtn__bar"></span>
+          <span class="iconbtn__bar"></span>
+          <span class="iconbtn__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer" id="navDrawer" aria-hidden="true">
+    <div class="drawer__panel">
+      <div class="drawer__head">
+        <span class="drawer__title">Menu</span>
+        <button class="iconbtn iconbtn--x" id="navClose" aria-label="Close menu">
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <div class="drawer__links">
+        <a href="#product" data-close-drawer>Product</a>
+        <a href="#solutions" data-close-drawer>How it works</a>
+        <a href="#features" data-close-drawer>Features</a>
+        <a href="#architecture" data-close-drawer>Architecture</a>
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="#community" data-close-drawer>Community</a>
+        <a href="#faq" data-close-drawer>FAQ</a>
+        <a href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="drawer__cta">
+        <a class="btn btn--whatsapp w-full" href="https://chat.whatsapp.com/91h0XT04hsEFBnlS4LWrLb" target="_blank" rel="noopener">WhatsApp Group</a>
+        <a class="btn btn--primary w-full" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">Star on GitHub</a>
+        <a class="btn btn--ghost w-full" href="docs.html">Read Docs</a>
+      </div>
+    </div>
+    <div class="drawer__backdrop" id="navBackdrop"></div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="section hero" id="product">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="badge">
+            <span class="badge__dot"></span>
+            LangGraph • Multi-provider LLM • Full-stack automation
+          </div>
+
+          <h1 class="h1">
+            Generate full-stack apps.<br />
+            <span class="grad">Collaborate agents, ship code.</span>
+          </h1>
+
+          <p class="lead">
+            SATGAS (Scalable Agent-to-agent Task Generation & Automation Service) menyatukan multi-agent AI—planner, product spec, backend, frontend, test, security, QA, DevOps—menjadi pipeline yang memecah prompt jadi task graph, menyimpan output incremental, dan menjalankan tool dengan guardrails.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">Get Source</a>
+            <a class="btn btn--ghost" href="docs.html">Read Docs</a>
+            <a class="btn btn--link" href="#architecture">View Architecture →</a>
+          </div>
+
+          <div class="trust">
+            <span class="trust__label">Built for:</span>
+            <div class="trust__row">
+              <span class="chip">Platform</span>
+              <span class="chip">DevOps</span>
+              <span class="chip">Data</span>
+              <span class="chip">Product Eng</span>
+              <span class="chip">Security</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__panel">
+          <div class="panel">
+            <div class="panel__head">
+              <span class="panel__title">Run Overview</span>
+              <span class="panel__pill">SAFE-DEFAULT</span>
+            </div>
+
+            <div class="panel__body">
+              <div class="kpi-grid">
+                <div class="kpi">
+                  <div class="kpi__label">Active Agents</div>
+                  <div class="kpi__value">4</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi__label">Tasks</div>
+                  <div class="kpi__value">27</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi__label">Success Rate</div>
+                  <div class="kpi__value">98.2%</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi__label">Avg Latency</div>
+                  <div class="kpi__value">1.9s</div>
+                </div>
+              </div>
+
+              <div class="mini-flow">
+                <div class="node ok">Planner</div>
+                <div class="arrow">→</div>
+                <div class="node ok">Executor</div>
+                <div class="arrow">→</div>
+                <div class="node warn">Reviewer</div>
+                <div class="arrow">→</div>
+                <div class="node ok">SecOps</div>
+              </div>
+
+              <div class="codecard">
+                <div class="codecard__head">
+                  <span>Quickstart</span>
+                  <button class="btn btn--tiny" data-copy="#heroCode">Copy</button>
+                </div>
+                <pre class="code" id="heroCode"><code>git clone https://github.com/zikazama/SATGAS
+cd SATGAS
+pip install -r requirements.txt
+cp .env.example .env
+python run.py</code></pre>
+                <div class="hint">Provider-agnostic: bisa pakai LLM lokal (mis. Qwen) atau cloud melalui konfigurasi.</div>
+              </div>
+            </div>
+          </div>
+
+              <div class="panel panel--thin">
+            <div class="panel__body">
+              <div class="inline-icons">
+                <span class="chip chip--icon">Orchestrator</span>
+                <span class="chip chip--icon">Product Spec</span>
+                <span class="chip chip--icon">Backend</span>
+                <span class="chip chip--icon">Frontend</span>
+                <span class="chip chip--icon">Testing</span>
+                <span class="chip chip--icon">Security</span>
+                <span class="chip chip--icon">QA</span>
+                <span class="chip chip--icon">DevOps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero__image hero__image--full">
+          <img src="assets/hero.png" alt="SATGAS Hero" />
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">How SATGAS works</h2>
+          <p class="muted">Dari 1 goal → task graph (DAG) → eksekusi terverifikasi → observability.</p>
+        </div>
+
+        <div class="grid4">
+          <div class="card">
+            <div class="card__icon">1</div>
+            <h3 class="h3">Prompt Intelligence</h3>
+            <p class="muted">Masukkan deskripsi aplikasi + tech stack, SATGAS mengatur konteks dan constraints.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">2</div>
+            <h3 class="h3">Multi-agent Pipeline</h3>
+            <p class="muted">Planner, product spec, backend, frontend, test, security, QA, DevOps bergerak sinkron.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">3</div>
+            <h3 class="h3">Guardrails & Execution</h3>
+            <p class="muted">Policy engine menahan tool & network, tool adapter ambil keputusan, output diaudit.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">4</div>
+            <h3 class="h3">Deliver & Store</h3>
+            <p class="muted">Hasil disimpan incremental di `projects/` lengkap dengan artifacts, docs, dan runbook.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section--soft" id="features">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Features built for production</h2>
+          <p class="muted">Skalabel, aman, dan nyaman untuk developer.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3 class="h3">Multi-provider LLM</h3>
+            <p class="muted">Bisa pakai Qwen CLI lokal atau OpenAI API tanpa mengganti codebase.</p>
+            <ul class="list">
+              <li>Provider-agnostic prompt builder</li>
+              <li>Config lewat `.env`</li>
+              <li>Ganti LLM cukup ubah `LLM_PROVIDER`</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Dynamic Tech Stack</h3>
+            <p class="muted">Pilih kombinasi backend, frontend, database secara deklaratif.</p>
+            <ul class="list">
+              <li>Configurasi `BACKEND_STACKS` / `FRONTEND_STACKS`</li>
+              <li>Support Express, FastAPI, React, Vue, dan banyak lagi</li>
+              <li>Custom stack via `config/settings.py`</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Incremental Output</h3>
+            <p class="muted">File disimpan otomatis saat pipeline berjalan.</p>
+            <ul class="list">
+              <li>Real-time persist di folder `projects/`</li>
+              <li>Prompt, spec, docs, hingga threat model tersedia</li>
+              <li>Artifacts siap pakai untuk deployment dan QA</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Extensible Agent Framework</h3>
+            <p class="muted">Tambah atau sesuaikan agent lewat class derivasi `BaseAgent`.</p>
+            <ul class="list">
+              <li>Override `build_prompt` & `process_response`</li>
+              <li>Daftarkan di `src/agents/registry.py`</li>
+              <li>State typing ada di `src/core/state.py`</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">8-agent pipeline</h3>
+            <p class="muted">Orchestrator, Product Spec, Backend, Frontend, Testing, Security, QA, DevOps.</p>
+            <ul class="list">
+              <li>Output: spec, code, docs, security analysis, CI</li>
+              <li>Parallel mode default, sequential untuk debugging</li>
+              <li>Pipeline bisa di-track & visualized via workflow utilities</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Observability & Guardrails</h3>
+            <p class="muted">Policy engine denim, audit log, cost per run (opsional).</p>
+            <ul class="list">
+              <li>Allowlist tools + network control</li>
+              <li>Approval gates untuk migrasi database / deploy</li>
+              <li>Audit logs + OpenTelemetry-friendly structure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Architecture</h2>
+          <p class="muted">Control plane + execution plane yang clean untuk scale-out.</p>
+        </div>
+
+        <div class="arch">
+          <div class="arch__col card">
+            <h3 class="h3">Control Plane</h3>
+            <p class="muted">LangGraph orchestrator, agent registry, dan workflow definition tertata di `src/core`.</p>
+            <div class="pillrow">
+              <span class="pill">Workflow Definitions</span>
+              <span class="pill">Agent Registry</span>
+              <span class="pill">Policy Engine</span>
+              <span class="pill">Configuration</span>
+            </div>
+          </div>
+
+          <div class="arch__col card">
+            <h3 class="h3">Execution Plane</h3>
+            <p class="muted">Agents eksekusi prompt, interaksi LLM, tool adapters (HTTP/DB/Shell).</p>
+            <div class="pillrow">
+              <span class="pill">8 Agents</span>
+              <span class="pill">Tool Adapters</span>
+              <span class="pill">LLM Providers</span>
+              <span class="pill">Secrets Injection</span>
+            </div>
+          </div>
+
+          <div class="arch__col card">
+            <h3 class="h3">Observability</h3>
+            <p class="muted">Run history, audit logs, project artifacts, dan docs di folder `projects/`.</p>
+            <div class="pillrow">
+              <span class="pill">projects/</span>
+              <span class="pill">Runbook</span>
+              <span class="pill">Security Findings</span>
+              <span class="pill">QA Reports</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          Deploy: single-node lokal (Streamlit UI) atau scale via Docker/Kubernetes. Issues & discussions tersedia di repo.
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section class="section section--soft" id="community">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Open source & community</h2>
+          <p class="muted">Kontribusi, diskusi roadmap, dan showcase use-case.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3 class="h3">Get the source</h3>
+            <p class="muted">Clone repo dan mulai dari quickstart.</p>
+            <a class="btn btn--primary" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">View on GitHub</a>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Contribute</h3>
+            <p class="muted">Buka issue, kirim PR, atau tambah connector/tool adapter.</p>
+            <a class="btn btn--ghost" href="docs.html#contributing">Contribution Guide</a>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Discussion channels</h3>
+            <p class="muted">Tempat tanya-jawab dan koordinasi komunitas.</p>
+            <div class="btnrow">
+              <a class="btn btn--whatsapp" href="https://chat.whatsapp.com/91h0XT04hsEFBnlS4LWrLb" target="_blank" rel="noopener">WhatsApp Group</a>
+              <a class="btn btn--primary" href="https://github.com/zikazama/SATGAS/discussions" target="_blank" rel="noopener">Discussions</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sponsor-card card">
+          <div class="sponsor-card__content">
+            <span class="sponsor-card__icon">💚</span>
+            <div class="sponsor-card__text">
+              <h3 class="h3">Support SATGAS</h3>
+              <p class="muted">Bantu pengembangan SATGAS dengan menjadi sponsor di GitHub.</p>
+            </div>
+            <a class="btn btn--primary" href="https://github.com/sponsors/zikazama" target="_blank" rel="noopener">Sponsor on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">FAQ</h2>
+          <p class="muted">Ringkas untuk pertanyaan yang paling sering muncul.</p>
+        </div>
+
+        <div class="accordion" data-accordion>
+          <div class="acc">
+            <button class="acc__q" type="button">Apa bedanya SATGAS dengan workflow engine biasa?</button>
+            <div class="acc__a">
+              SATGAS menggabungkan A2A orchestration, agent roles, policy guardrails, dan task-DAG (dengan observability) sebagai fondasi.
+            </div>
+          </div>
+          <div class="acc">
+            <button class="acc__q" type="button">Bisa pakai LLM lokal (mis. Qwen)?</button>
+            <div class="acc__a">
+              Bisa. Provider-agnostic: local runtime atau cloud dapat dipilih via konfigurasi.
+            </div>
+          </div>
+          <div class="acc">
+            <button class="acc__q" type="button">Bagaimana keamanan tool execution?</button>
+            <div class="acc__a">
+              Policy engine: allowlist tools, network rules, secrets runtime injection, approval gates, dan audit logs.
+            </div>
+          </div>
+          <div class="acc">
+            <button class="acc__q" type="button">Bagaimana cara kontribusi?</button>
+            <div class="acc__a">
+              Lihat bagian Contributing di Docs: ikuti style guide, jalankan test, lalu submit PR.
+            </div>
+          </div>
+          <div class="acc">
+            <button class="acc__q" type="button">Tech stack apa saja yang didukung?</button>
+            <div class="acc__a">
+              Backend: Express, FastAPI, Django, Flask, NestJS, Gin, Rails, Spring Boot, Laravel. Frontend: React, Vue, Angular, Svelte, Next.js, Nuxt. Database: PostgreSQL, MySQL, MongoDB, SQLite, Redis, dan lainnya.
+            </div>
+          </div>
+          <div class="acc">
+            <button class="acc__q" type="button">Apa saja output yang dihasilkan SATGAS?</button>
+            <div class="acc__a">
+              SATGAS menghasilkan spec.yaml, backend code, frontend code, test suites, threat model, security findings, QA reports, docker-compose, CI/CD workflow, dan RUNBOOK dokumentasi.
+            </div>
+          </div>
+          <div class="acc">
+            <button class="acc__q" type="button">Apa perbedaan mode parallel dan sequential?</button>
+            <div class="acc__a">
+              Mode parallel (default) menjalankan agent independent secara bersamaan untuk efisiensi. Mode sequential menjalankan satu per satu, berguna untuk debugging dan tracing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section--soft" id="cta">
+      <div class="container">
+        <div class="cta card">
+          <div class="cta__copy">
+            <h2 class="h2">Start building with SATGAS</h2>
+            <p class="muted">Clone repo, jalankan dev setup, dan coba contoh workflow.</p>
+            <div class="cta__buttons">
+              <a class="btn btn--primary" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">Get Source</a>
+              <a class="btn btn--ghost" href="docs.html#quickstart">Quickstart</a>
+              <a class="btn btn--ghost" href="https://github.com/zikazama/SATGAS/issues" target="_blank" rel="noopener">Open an Issue</a>
+            </div>
+          </div>
+
+          <div class="cta__box">
+            <div class="codecard">
+              <div class="codecard__head">
+                <span>Minimal setup</span>
+                <button class="btn btn--tiny" data-copy="#setupCode">Copy</button>
+              </div>
+              <pre class="code" id="setupCode"><code>git clone https://github.com/zikazama/SATGAS
+cd SATGAS
+pip install -r requirements.txt
+python run.py
+python -m pytest</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <div class="brand brand--footer">
+            <span class="brand__mark" aria-hidden="true">
+              <img src="assets/satgas-logo.png" alt="SATGAS logo" onerror="this.style.display='none'; this.parentElement.classList.add('brand__mark--fallback');" />
+              <span class="brand__fallback">S</span>
+            </span>
+            <span class="brand__name">SATGAS</span>
+          </div>
+          <p class="muted">Open source A2A task generation & automation framework.</p>
+        </div>
+
+        <div class="footer__cols">
+          <div class="footer__col">
+            <div class="footer__title">Project</div>
+            <a href="#features">Features</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#community">Community</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__title">Developers</div>
+            <a href="docs.html">Docs</a>
+            <a href="docs.html#pipeline">Agent Pipeline</a>
+            <a href="docs.html#techstack">Tech Stack</a>
+            <a href="docs.html#contributing">Contributing</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__title">GitHub</div>
+            <a href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">Repository</a>
+            <a href="https://github.com/zikazama/SATGAS/issues" target="_blank" rel="noopener">Issues</a>
+            <a href="https://github.com/zikazama/SATGAS/discussions" target="_blank" rel="noopener">Discussions</a>
+            <a href="https://github.com/sponsors/zikazama" target="_blank" rel="noopener">Sponsor</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <span>© <span id="year"></span> SATGAS</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

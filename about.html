@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — SATGAS</title>
+  <meta name="description" content="Tentang Fauzi Fadhlurrohman, penulis SATGAS (Scalable Agent-to-agent Task Generation & Automation Service), dan roadmap framework-nya." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/satgas-logo.png" sizes="32x32" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/satgas-logo.png" alt="SATGAS logo" onerror="this.style.display='none'; this.parentElement.classList.add('brand__mark--fallback');" />
+          <span class="brand__fallback"></span>
+        </span>
+        <span class="brand__name">SATGAS</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html">Landing</a>
+        <a href="docs.html">Docs</a>
+        <a class="nav__github" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="docs.html">Docs</a>
+        <a class="btn btn--primary" href="https://www.linkedin.com/in/fauzi-fadhlurrohman/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <button class="iconbtn" id="navToggle" aria-label="Open menu" aria-controls="navDrawer" aria-expanded="false">
+          <span class="iconbtn__bar"></span>
+          <span class="iconbtn__bar"></span>
+          <span class="iconbtn__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="navDrawer" aria-hidden="true">
+    <div class="drawer__panel">
+      <div class="drawer__head">
+        <span class="drawer__title">Menu</span>
+        <button class="iconbtn iconbtn--x" id="navClose" aria-label="Close menu">
+          <span></span><span></span>
+        </button>
+      </div>
+      <div class="drawer__links">
+        <a href="index.html" data-close-drawer>Landing</a>
+        <a href="docs.html" data-close-drawer>Docs</a>
+        <a href="https://www.linkedin.com/in/fauzi-fadhlurrohman/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="drawer__cta">
+        <a class="btn btn--whatsapp w-full" href="https://chat.whatsapp.com/91h0XT04hsEFBnlS4LWrLb" target="_blank" rel="noopener">WhatsApp Group</a>
+        <a class="btn btn--primary w-full" href="https://www.linkedin.com/in/fauzi-fadhlurrohman/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn btn--ghost w-full" href="index.html">Back to Landing</a>
+      </div>
+    </div>
+    <div class="drawer__backdrop" id="navBackdrop"></div>
+  </div>
+
+  <main>
+    <section class="section hero" id="about-hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="badge">
+            <span class="badge__dot"></span>
+            Author & Creator
+          </div>
+          <h1 class="h1">
+            Fauzi Fadhlurrohman<br />
+            <span class="grad">Founder of SATGAS</span>
+          </h1>
+          <p class="lead">
+            Fauzi adalah software engineer yang menulis SATGAS (Scalable Agent-to-agent Task Generation & Automation Service).
+            Ia membangun framework ini agar tim bisa mengotomatiskan pembuatan aplikasi full-stack dengan multi-agent AI di atas LangGraph.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/fauzi-fadhlurrohman/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            <a class="btn btn--ghost" href="https://github.com/zikazama/SATGAS" target="_blank" rel="noopener">See the code</a>
+          </div>
+        </div>
+        <div class="hero__panel">
+          <div class="author-card">
+            <div class="author-card__photo">
+              <img src="https://media.licdn.com/dms/image/v2/C5603AQG3G5WRw5le1g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1642999869700?e=2147483647&v=beta&t=cTH-fC7uB1RjI5Itk4X7K9n7PVY93TcuLf91SHdqkSM" alt="Fauzi Fadhlurrohman" />
+            </div>
+            <div class="author-card__info">
+              <div class="author-card__name">Fauzi Fadhlurrohman</div>
+              <div class="author-card__role">Software Engineer & Creator</div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel__head">
+              <span class="panel__title">Focus Areas</span>
+            </div>
+            <div class="panel__body">
+              <div class="trust__row">
+                <span class="chip">Full-stack Automation</span>
+                <span class="chip">LangGraph</span>
+                <span class="chip">AI Governance</span>
+                <span class="chip">Security-first</span>
+              </div>
+              <div class="hint" style="margin-top:12px">Published multiple guides on scalable agent workflows, streamlining prompt-to-product pipelines.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="author-story">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">The story behind SATGAS</h2>
+          <p class="muted">
+            SATGAS lahir dari pengalaman Fauzi membangun aplikasi end-to-end dan menerapkan automation dengan agen kolaboratif.
+          </p>
+        </div>
+        <div class="grid2">
+          <div class="card">
+            <h3 class="h3">Vision</h3>
+            <p class="muted">
+              Memberikan developer dan tim produk kemampuan untuk mendeskripsikan ide dalam satu paragraf, lalu SATGAS menghasilkan task graph, code, security docs, dan deployment artifacts.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="h3">Community & Docs</h3>
+            <p class="muted">
+              Fauzi mendorong kontribusi dengan dokumentasi lengkap, guide gaya penulisan agent, serta repo yang terbuka untuk sharing dan collaboration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="author-cta">
+      <div class="container">
+        <div class="cta card">
+          <div class="cta__copy">
+            <h2 class="h2">Let’s collaborate on SATGAS</h2>
+            <p class="muted">
+              Ingin tahu roadmap SATGAS, teknologi LangGraph, atau kontribusi agent baru? Fauzi terbuka untuk diskusi dan kolaborasi.
+            </p>
+            <div class="cta__buttons">
+              <a class="btn btn--primary" href="https://www.linkedin.com/in/fauzi-fadhlurrohman/" target="_blank" rel="noopener">Message on LinkedIn</a>
+              <a class="btn btn--ghost" href="https://github.com/zikazama/SATGAS/discussions" target="_blank" rel="noopener">Join discussions</a>
+            </div>
+          </div>
+          <div class="cta__box">
+            <div class="codecard">
+              <div class="codecard__head">
+                <span>Author note</span>
+              </div>
+              <div class="code hint">
+                “SATGAS adalah bentuk saya menggabungkan AI, automation, dan product thinking untuk membuat software engineering lebih produktif.”
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true">
+            <img src="assets/satgas-logo.png" alt="SATGAS logo" onerror="this.style.display='none'; this.parentElement.classList.add('brand__mark--fallback');" />
+            <span class="brand__fallback">S</span>
+          </span>
+          <span class="brand__name">SATGAS</span>
+        </div>
+        <p class="muted">Scalable Agent-to-agent Task Generation & Automation Service.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <div class="footer__title">Links</div>
+          <a href="index.html">Landing</a>
+          <a href="docs.html">Docs</a>
+          <a href="https://www.linkedin.com/in/fauzi-fadhlurrohman/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Fauzi Fadhlurrohman</span>
+      <span class="muted">MIT/Apache-2.0</span>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
